@@ -29,4 +29,4 @@
 // MACROS ENCODER 2
 #define ENC10 KC_NO
 #define ENC11 KC_NO
-#define ENC12 KC_MUTE
+#define ENC12 RGB_TOG

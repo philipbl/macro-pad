@@ -7,26 +7,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[0] = LAYOUT(ENC03
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {[0] = {ENCODER_CCW_CW(ENC01, ENC02), ENCODER_CCW_CW(ENC10, ENC11)}};
 #endif
 
-bool dip_switch_update_user(uint8_t index, bool active) {
-    switch (index) {
-        case 0:
-
-            if (active) {
-                tap_code(ENC03);
-            } else {
-            }
-
-            break;
-
-        case 1:
-
-            if (active) {
-                tap_code(ENC12);
-            } else {
-            }
-
-            break;
-    }
-
-    return true;
-}
+#if defined(DIP_SWITCH_MAP_ENABLE)
+const uint16_t PROGMEM dip_switch_map[NUM_DIP_SWITCHES][NUM_DIP_STATES] = {DIP_SWITCH_OFF_ON(KC_NO, ENC03), DIP_SWITCH_OFF_ON(KC_NO, ENC12)};
+#endif
